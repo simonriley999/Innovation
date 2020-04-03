@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Keywords
+  - if
+  - jump
+  - pickup
+  - drop
+  - endif
   layers:
   - Default
   - TransparentFX

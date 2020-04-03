@@ -15,7 +15,7 @@ public class IfOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
-        transform.SetParent(transform.parent.parent);
+        transform.SetParent(transform.parent.parent.parent);
         //transform.position = eventData.position;
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
@@ -34,11 +34,12 @@ public class IfOnDrag : MonoBehaviour,IBeginDragHandler,IDragHandler,IEndDragHan
         {
             Destroy(gameObject);
         }
-        if (eventData.pointerCurrentRaycast.gameObject.name=="RunPanel")
+        if (eventData.pointerCurrentRaycast.gameObject.name=="RunPanel"|| eventData.pointerCurrentRaycast.gameObject.name == "mask")
         {
-            transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+            //transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+            transform.SetParent(originalParent);
         }
-        else if (eventData.pointerCurrentRaycast.gameObject.tag=="Keywords")
+        else if (eventData.pointerCurrentRaycast.gameObject.tag=="if")
         {
             GameObject temp = eventData.pointerCurrentRaycast.gameObject;
             Transform tp = eventData.pointerCurrentRaycast.gameObject.transform.parent;
