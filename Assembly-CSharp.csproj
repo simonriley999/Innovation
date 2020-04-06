@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scanAround.cs" />
     <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\TiltWindow.cs" />
+    <Compile Include="Assets\serialNumber.cs" />
     <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />

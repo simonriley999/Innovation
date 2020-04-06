@@ -10,6 +10,9 @@ TagManager:
   - pickup
   - drop
   - endif
+  - move
+  - endjump
+  - empty
   layers:
   - Default
   - TransparentFX

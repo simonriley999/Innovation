@@ -6,10 +6,10 @@ public class code
 {
     public string functionType;
     public List<List<int>> direction = new List<List<int>>();//direction中为↖，↑，↗，←，当前，→，↙，↓，↘
-    public int equivalent;//1为==，2为≠，3为>，4为>=，5为<，6为<=；
+    public int equivalent;//0为≠，1为==//，2为>，3为>=，4为<，5为<=；
     public string condition;
     public bool isMore;//是否有额外条件
-    public int movementDir;
+    public int movementDir;//用于从direction中提取方向
     public int thisPos, tarPos;
     
     public code()

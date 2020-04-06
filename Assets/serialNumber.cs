@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keynum : MonoBehaviour
+public class serialNumber : MonoBehaviour
 {
-    public Stack<GameObject> ifGroNum;
-    // Start is called before the first frame update
+    public int serialnum;
     private void Awake()
     {
-        ifGroNum = new Stack<GameObject>();
+        serialnum = 0;
     }
+    // Start is called before the first frame update
     void Start()
     {
         

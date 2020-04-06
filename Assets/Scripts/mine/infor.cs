@@ -7,22 +7,33 @@ public class infor :MonoBehaviour
 {
     public Dropdown dir, equ, con, der;
     public code data;
-    public int sNum;//用于辨别if-endif组
+    //public int sNum;//用于辨别if-endif组
     private void Awake()
     {
-        //data.functionType = this.gameObject.tag;
-        dir = transform.Find("condition").gameObject.GetComponent<Dropdown>();
-        equ = transform.Find("equivalent").gameObject.GetComponent<Dropdown>();
-        con = transform.Find("moreCondition").gameObject.GetComponent<Dropdown>();
-        der = transform.Find("derivative").gameObject.GetComponent<Dropdown>();
-        int num = GameObject.Find("RunPanel").GetComponent<keynum>().ifGroNum;
-        sNum = ++num;
 
+        try
+        {
+            dir = transform.Find("condition").gameObject.GetComponent<Dropdown>();
+            equ = transform.Find("equivalent").gameObject.GetComponent<Dropdown>();
+            con = transform.Find("moreCondition").gameObject.GetComponent<Dropdown>();
+            der = transform.Find("derivative").gameObject.GetComponent<Dropdown>();
+        }
+        catch (System.Exception)
+        {
+            dir = null;
+            equ = null;
+            con = null;
+            der = null;
+        }
+        //dir = transform.Find("condition").gameObject.GetComponent<Dropdown>();
+        //equ = transform.Find("equivalent").gameObject.GetComponent<Dropdown>();
+        //con = transform.Find("moreCondition").gameObject.GetComponent<Dropdown>();
+        //der = transform.Find("derivative").gameObject.GetComponent<Dropdown>();
     }
     private void Start()
     {
-        
 
+        //data.functionType = transform.tag;
         //dir = transform.Find("condition").gameObject.GetComponent<Dropdown>();
         //equ= transform.Find("equivalent").gameObject.GetComponent<Dropdown>();
         //con= transform.Find("moreCondition").gameObject.GetComponent<Dropdown>();
@@ -40,12 +51,5 @@ public class infor :MonoBehaviour
     private void Update()
     {
         
-    }
-    public void save()
-    {
-        GameObject run = GameObject.Find("runbtn");
-        CodeDataB cdb = run.GetComponent<CodeDataB>();
-        List<code> temp = cdb.dataBase;
-        temp.Add(data);
     }
 }
